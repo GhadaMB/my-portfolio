@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Ghada Baroud | Information & Communication Technology Engineer
+    </title>
+    <link rel="icon" type="image/jpg" href="images/profile/favicon.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <a href="#" class="logo">Ghada<span>Baroud</span></a>
+
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="active">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <header>
+      <div class="architecture-banner"></div>
+      <div class="banner-overlay"></div>
+      <div class="moving-icons" id="movingIcons"></div>
+
+      <div class="header-content">
+        <h1>Information Technology Engineer</h1>
+        <p>
+          <span class="typing-text"></span><span class="typing-cursor">|</span>
+        </p>
+      </div>
+
+      <div class="scroll-down" onclick="scrollToContent()">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            I’m Ghada Baroud, an Information Engineer with a Bachelor’s degree
+            from Tartous University and over 4 years of professional experience
+            in web development. Throughout my career, I have collaborated with
+            both local and international companies, delivering diverse projects
+            with unique ideas and tailored solutions.
+          </p>
+          <p>
+            My expertise lies primarily in back-end development with Laravel,
+            where I specialize in building scalable APIs, dashboards and
+            developing full-stack applications using Laravel Blade. I also have
+            experience working with Angular for smaller projects, as well as
+            creating and customizing WordPress websites to enhance performance
+            and user experience.
+          </p>
+          <p>
+            I’m passionate about writing clean, maintainable code and
+            transforming ideas into impactful digital solutions that meet both
+            business and user needs.
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="images/profile/about.jpg" alt="Ghada Baroud" />
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+
+      <div class="education-item">
+        <div class="education-icon">
+          <i class="fas fa-university"></i>
+        </div>
+        <div class="education-details">
+          <h3>BSc in Information and Communication Technology Engineering</h3>
+          <div class="education-meta">
+            <span class="education-institution"
+              ><i class="fas fa-university"></i> University of Tartous</span
+            >
+            <span class="education-date"
+              ><i class="far fa-calendar-alt"></i> 2014 - 2019</span
+            >
+            <span class="education-location"
+              ><i class="fas fa-map-marker-alt"></i> Tartous, Syria</span
+            >
+          </div>
+          <div class="education-description">
+            <p>
+              Graduated with honors (74%) in Information Technology
+              specialization.
+            </p>
+            <p>Key focus areas:</p>
+            <ul class="education-specializations">
+              <li><i class="fas fa-code"></i> Web Development</li>
+              <li>
+                <i class="fas fa-project-diagram"></i> Software Engineering
+              </li>
+              <li><i class="fas fa-database"></i> Database Management</li>
+              <li><i class="fas fa-cloud"></i> Cloud & Network Systems</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="certifications">
+      <h2>Certifications</h2>
+      <div class="certifications-container">
+        <!-- Certification Card - Example Coursera Certificate -->
+        <div class="certification-card">
+          <div class="certification-logo">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h3>Machine Learning For All</h3>
+          <div class="certification-meta">
+            <span class="provider">Coursera (University of London)</span>
+            <span class="date">Soon</span>
+          </div>
+          <a href="#" class="view-cert" target="_blank">
+            <i class="fas fa-external-link-alt"></i> View Credential
+          </a>
+        </div>
+
+        <!-- Certification Card - English Certificate -->
+        <div class="certification-card">
+          <div class="certification-logo">
+            <i class="fas fa-language"></i>
+          </div>
+          <h3>EF SET English</h3>
+          <div class="certification-meta">
+            <span class="provider">EF SET</span>
+            <span class="date">Completed Apr 2025</span>
+          </div>
+          <a
+            href="files/efset-certificate.pdf"
+            class="view-cert"
+            target="_blank"
+          >
+            <i class="fas fa-external-link-alt"></i> View Credential
+          </a>
+        </div>
+      </div>
+
+      <div class="certifications-scroll-controls">
+        <button
+          class="scroll-btn left-scroll"
+          onclick="scrollCertifications(-1)"
+        >
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button
+          class="scroll-btn right-scroll"
+          onclick="scrollCertifications(1)"
+        >
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2>Featured Projects</h2>
+
+      <!-- VROOM -->
+      <div class="project">
+        <div class="project-header">
+          <h3>VROOM</h3>
+          <div class="project-links">
+            <a href="projects/vroom.html" class="code-link" target="_blank">
+              <i class="fas fa-lock"></i> Details
+            </a>
+          </div>
+        </div>
+        <p>
+          A smart delivery platform connecting users and drivers efficiently. It
+          offers real-time driver tracking, an admin dashboard for managing
+          orders, and a driver-matching system to ensure fast and reliable
+          deliveries.
+        </p>
+        <div class="project-content">
+          <div class="project-image">
+            <img
+              src="images/projects/vroom/vroom.jpg"
+              alt="Smart Health Monitoring System"
+            />
+          </div>
+          <div class="project-details">
+            <ul class="features-list">
+              <li>
+                User and driver-friendly delivery platform with a comprehensive
+                admin dashboard.
+              </li>
+              <li>Real-time notifications and updates via Firebase.</li>
+              <li>
+                Dynamic delivery fee calculation with optimal route
+                determination using Mapbox.
+              </li>
+              <li>
+                Intelligent driver-matching system for quick and efficient
+                responses.
+              </li>
+              <li>
+                Real-time driver tracking and route visualization for users.
+              </li>
+              <li>
+                Public API for third-party companies to place orders seamlessly.
+              </li>
+            </ul>
+            <ul class="tech-tags">
+              <li>Laravel</li>
+              <li>PHP</li>
+              <li>Firebase</li>
+              <li>Rest API</li>
+              <li>Realtime Database</li>
+              <li>Firebase Messaging</li>
+              <li>Mapbox</li>
+              <li>Third Party Integration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tazkara -->
+      
+
+      <!-- Sahab -->
+      
+
+      <!-- Salunox -->
+      
+
+      <!-- Collage App -->
+      
+
+      <!-- Apply Design -->
+      
+
+      <!-- Aura -->
+      
+
+      <!-- Configurator Tool -->
+
+      <!-- Best Price -->
+    </section>
+
+    <section class="skills" id="skills">
+      <h2>Technical Skills</h2>
+      <ul>
+        <li><i class="fab fa-laravel"></i> Laravel</li>
+        <li><i class="fab fa-angular"></i> Angular</li>
+        <li><i class="fab fa-php"></i> PHP</li>
+        <li><i class="fab fa-js"></i> JavaScript</li>
+        <li><i class="fab fa-js-square"></i> TypeScript</li>
+        <li><i class="fab fa-html5"></i> HTML</li>
+        <li><i class="fab fa-css3-alt"></i> CSS</li>
+        <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
+        <li><i class="fas fa-code"></i> JSON</li>
+        <li><i class="fas fa-database"></i> MySQL</li>
+        <li><i class="fas fa-cubes"></i> Filament</li>
+        <li><i class="fas fa-bell"></i> Firebase Messaging</li>
+        <li><i class="fas fa-stream"></i> Firebase Realtime Database</li>
+        <li><i class="fas fa-sync-alt"></i> AJAX</li>
+        <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
+        <li><i class="fab fa-wordpress"></i> WordPress</li>
+        <li><i class="fas fa-store"></i> PrestaShop</li>
+        <li><i class="fas fa-database"></i> Relational Database</li>
+        <li><i class="fas fa-lightbulb"></i> Problem Solving</li>
+        <li><i class="fas fa-cogs"></i> API</li>
+        <li><i class="fas fa-check-circle"></i> QA</li>
+        <li>
+          <i class="fas fa-project-diagram"></i> Domain-Driven Design (DDD)
+        </li>
+        <li><i class="fas fa-brush"></i> Clean Code</li>
+        <li><i class="fas fa-server"></i> Back-End Web Development</li>
+        <li>
+          <i class="fas fa-object-group"></i> Object-Oriented Programming (OOP)
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Get In Touch</h2>
+      <div class="contact-info">
+        <p>
+          <i class="fas fa-envelope"></i>
+          Email:
+          <a href="mailto:ghadabaroud@gmail.com">ghadabaroud996@gmail.com</a>
+        </p>
+        <p>
+          <i class="fab fa-linkedin"></i>
+          LinkedIn:
+          <a
+            href="https://www.linkedin.com/in/ghada-baroud-6b7097178/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >https://www.linkedin.com/in/ghada-baroud-6b7097178/</a
+          >
+        </p>
+        <p>
+          <i class="fab fa-github"></i>
+          GitHub:
+          <a
+            href="https://github.com/GhadaMB"
+            target="_blank"
+            rel="noopener noreferrer"
+            >https://github.com/GhadaMB</a
+          >
+        </p>
+        <p>
+          <i class="fas fa-map-marker-alt"></i>
+          Location: Tartous, Syria
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        &copy; 2025 Ghada Baroud | Information & Communication Technology
+        Enginner
+      </p>
+    </footer>
+
+    <script src="./js/script.js" defer></script>
+  </body>
+</html>
