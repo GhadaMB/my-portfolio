@@ -860,25 +860,25 @@ section {
 }
 /* Honours and Awards Section */
 .honours-awards {
-  background: #f9f9f9;
+  background-color: var(--box-color);
   padding: 4rem 2rem;
+  border-radius:12px;
 }
 
 .honours-awards h2 {
-  text-align: center;
   margin-bottom: 3rem;
-  color: #2c3e50;
+  color: var(--secondary-color);
   font-size: 2.2rem;
 }
 
 .awards-container {
   max-width: 800px;
   margin: 0 auto;
+  border-radius:12px;
 }
 
 .award-card {
   background: white;
-  border-left: 4px solid #3498db;
   border-radius: 4px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
@@ -892,14 +892,9 @@ section {
   transform: translateY(-5px);
 }
 
-.award-card.highlight {
-  border-left-color: #3498db;
-  background: linear-gradient(to right, #fff9f9, white);
-}
-
 .award-year {
   font-weight: bold;
-  color: #3498db;
+  color: var(--text-color);
   margin-right: 1.5rem;
   font-size: 1.1rem;
   min-width: 60px;
@@ -994,7 +989,8 @@ h2 {
 } /* كان 4rem 2rem */
 .award-card {
   padding: 1rem; /* كان 1.5rem */
-  margin-bottom: 0.9rem; /* كان 1.5rem */
+  margin-bottom: 0.9rem;
+  justify-content: space-between;
 }
 
 /* Certifications */
