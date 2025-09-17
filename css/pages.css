@@ -102,8 +102,8 @@ header[role="banner"] {
   box-shadow: var(--shadow);
   overflow: hidden;
 }
-header .header-par{
-    color: #ffffff!important;
+header .header-par {
+  color: #ffffff !important;
 }
 /* Subtle parallax shimmer (GPU-friendly) */
 header[role="banner"]::after {
@@ -288,7 +288,7 @@ aside.note {
   position: relative;
 }
 .carousel {
-  height:600px !important;
+  height: 600px !important;
   position: relative;
   overflow: hidden;
   border-radius: 12px;
@@ -420,8 +420,8 @@ footer::before {
   height: 5px;
   background: linear-gradient(90deg, var(--accent-color), #fff);
 }
-footer p{
-    color:white!important;
+footer p {
+  color: white !important;
 }
 footer .social-links a {
   color: white;
@@ -436,3 +436,8 @@ footer .social-links a {
   }
 }
 
+@media (max-width: 576px) {
+  .carousel {
+    height: 300px !important;
+  }
+}
