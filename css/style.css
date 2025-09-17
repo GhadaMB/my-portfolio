@@ -45,6 +45,7 @@
   display: flex;
   gap: 2.5rem;
   list-style: none;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -179,7 +180,7 @@ header {
 }
 .moving-icons {
   position: absolute;
-  width: 100%;
+  width: 90%;
   height: 100%;
   overflow: hidden;
   z-index: 1;
@@ -862,7 +863,7 @@ section {
 .honours-awards {
   background-color: var(--box-color);
   padding: 4rem 2rem;
-  border-radius:12px;
+  border-radius: 12px;
 }
 
 .honours-awards h2 {
@@ -874,7 +875,7 @@ section {
 .awards-container {
   max-width: 800px;
   margin: 0 auto;
-  border-radius:12px;
+  border-radius: 12px;
 }
 
 .award-card {
@@ -1014,7 +1015,7 @@ footer {
 /* Optional: لو بدك أكثر إحكام بالموبايل */
 @media (max-width: 768px) {
   section {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 1rem !important;
     margin-bottom: 12px;
   }
   h2 {
@@ -1086,6 +1087,10 @@ footer {
   .code-link {
     width: 100%;
     text-align: center;
+  }
+  .contact-info p {
+    font-size: 1rem !important;
+    flex-wrap: wrap;
   }
 }
 /* تلوين الرابط الفعّال */
