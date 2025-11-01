@@ -87,7 +87,7 @@
 .hamburger {
   display: none;
   cursor: pointer;
-  color: white;
+  color: var(--text-color);
   font-size: 1.8rem;
 }
 
@@ -99,15 +99,21 @@
   .nav-links {
     position: fixed;
     top: 80px;
-    left: -100%;
+    left: 0;
     width: 100%;
     height: calc(100vh - 80px);
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: #f5f5f5;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 3rem;
     transition: left 0.5s ease;
+    visibility: hidden;
+    margin: 0;
+  }
+
+  .nav-links.open {
+    visibility: visible;
   }
 
   .nav-links.active {
@@ -116,6 +122,11 @@
 
   .navbar.scrolled {
     padding: 1rem 5%;
+  }
+
+  body.no-scroll {
+    overflow: hidden;
+    height: 100vh;
   }
 }
 

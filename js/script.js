@@ -163,6 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburger.addEventListener("click", () => {
       navLinksContainer.classList.toggle("open");
       hamburger.classList.toggle("open");
+      document.body.classList.toggle('no-scroll');
     });
     navLinks.forEach((a) =>
       a.addEventListener("click", () => {
