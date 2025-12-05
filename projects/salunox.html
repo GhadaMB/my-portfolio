@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ghada Baroud | Salunox </title>
+
+    <!-- Typography (same as portfolio) -->
+    <link rel="icon" type="image/jpg" href="../images/profile/favicon.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/pages.css" />
+  </head>
+  <body>
+
+    <header role="banner">
+      <h1>Ghada Baroud</h1>
+      <p class="header-par">
+        Back End Developer<br>
+      </p>
+    </header>
+
+    <main id="main" role="main">
+      <section id="project-vroom" aria-labelledby="vroom-title">
+        <h2 id="vroom-title" class="reveal">
+          SALUNOX —  Doctor Dashboard & Patient Management (Laravel)
+        </h2>
+
+        <article class="project reveal" aria-label="VROOM Laravel backend">
+          <header class="project-header">
+            <h3>Role: Back End Developer (Laravel)</h3>
+            <p>
+               Developed a scalable backend architecture for a medical platform used by doctors and patients.
+            </p>
+          </header>
+
+          <aside class="note" role="note" aria-label="Confidentiality notice">
+            <strong>Source Code Confidentiality:</strong> Developed under a
+            client contract/NDA. The source code is proprietary and not
+            available for distribution. This page demonstrates functionality
+            through interface screenshots.
+          </aside>
+
+          <section class="content" aria-labelledby="overview-title">
+            <h3 id="overview-title" style="font-size: var(--fs-h3)" >
+              Project Overview
+            </h3>
+            <p>
+                A medical backend platform built with Laravel, allowing doctors to manage patients based on their
+                Stripe subscription plans—including free trials. Doctors can create structured treatment timelines
+                containing exercises, videos, instructions, and assessment questions, all organized using an
+                interactive calendar. Patients access the mobile app to complete exercises, view treatment content,
+                and answer assigned questions.
+                The system also includes a dynamic roles and permissions module, allowing doctors to add team members. 
+                Each added member automatically triggers a Stripe subscription cost adjustment after a defined period, 
+                handled through scheduled queue jobs.
+            </p>
+          </section>
+
+          <!-- Technical summary -->
+          <section aria-labelledby="tech-title">
+            <h3 id="tech-title" style="font-size: var(--fs-h3)" >
+              Technical Summary
+            </h3>
+            <ul>
+              <ul>
+                <li>Built a domain-separated backend using the <strong>DDD architecture</strong> and clean code principles.</li>
+                <li>Integrated <strong>Stripe</strong> for subscription handling, renewals, and trial periods.</li>
+                <li>Developed APIs for doctors to assign exercises, instructions, videos, and assessment questions.</li>
+                <li>Created a treatment timeline system with interactive calendar scheduling.</li>
+                <li>Implemented a patient module for viewing assigned tasks and answering medical assessments.</li>
+                <li>Designed scalable service layers and reusable domain logic to support platform expansion.</li>
+                <li>Implemented a roles and permissions system allowing doctors to add team members with controlled access levels.</li>
+                <li>Automated billing adjustments: when a new member is added, a scheduled queue job updates the doctor’s 
+                    Stripe subscription after a predefined period.</li>
+            </ul>
+
+            <ul class="tech" aria-label="Technologies">
+                <li>Laravel</li>
+                <li>PHP</li>
+                <li>MySQL</li>
+                <li>RESTful APIs</li>
+                <li>DDD Architecture</li>
+                <li>Laravel Queues & Jobs</li>
+                <li>Roles & Permissions</li>
+                <li>Stripe API</li>
+                <li>JSON</li>
+                <li>Backend Engineering</li>
+                <li>Clean Code</li>
+                <li>OOP</li>
+                <li>Git & GitHub</li>
+            </ul>
+          </section>
+
+           <!-- Screenshots -->
+          
+
+          </section>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; 2025 Ghada Baroud | Information & Communication Technology
+        Enginner
+      </p>
+    </footer>
+    <script src="../js/pages.js" defer></script>
+  </body>
+</html>
