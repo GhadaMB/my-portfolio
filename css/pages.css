@@ -271,14 +271,6 @@ aside.note {
   transform: translateY(-1px);
 }
 
-@media (prefers-color-scheme: dark) {
-  .tech li {
-    background: #0e2239;
-    color: #cde2ff;
-    border-color: rgba(122, 214, 255, 0.2);
-  }
-}
-
 /* =========================
        Carousel (no-crop, adaptive)
     ========================== */
