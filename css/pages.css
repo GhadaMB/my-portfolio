@@ -28,22 +28,6 @@
   --space-5: 2rem;
   --space-6: 3rem;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --surface: #0f1420;
-    --surface-subtle: #111a2a;
-    --text: #d7e2f1;
-    --muted: #a7b4c9;
-    --primary: #cfe4ff;
-    --secondary: #b7d0ec;
-    --accent: #7ad6ff;
-    --ring: rgba(122, 214, 255, 0.45);
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  }
-  img {
-    opacity: 0.98;
-  }
-}
 
 /* =========================
        Base / Layout
@@ -51,9 +35,11 @@
 * {
   box-sizing: border-box;
 }
+
 html:focus-within {
   scroll-behavior: smooth;
 }
+
 body {
   margin: 0;
   font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial,
@@ -75,6 +61,7 @@ body {
   height: 1px;
   overflow: hidden;
 }
+
 .skip-link:focus {
   position: fixed;
   left: 1rem;
@@ -91,20 +78,20 @@ body {
 
 header[role="banner"] {
   position: relative;
-  background: linear-gradient(
-    160deg,
-    var(--secondary-color),
-    var(--primary-color)
-  );
+  background: linear-gradient(160deg,
+      var(--secondary-color),
+      var(--primary-color));
   color: #fff;
   text-align: center;
   padding: var(--space-6) var(--space-4);
   box-shadow: var(--shadow);
   overflow: hidden;
 }
+
 header .header-par {
   color: #ffffff !important;
 }
+
 /* Subtle parallax shimmer (GPU-friendly) */
 header[role="banner"]::after {
   content: "";
@@ -112,16 +99,15 @@ header[role="banner"]::after {
   inset: -40% -40% auto auto;
   height: 240%;
   width: 60%;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(255, 255, 255, 0.18),
-    transparent 60%
-  );
+  background: radial-gradient(ellipse at center,
+      rgba(255, 255, 255, 0.18),
+      transparent 60%);
   transform: translate3d(0, 0, 0);
   will-change: transform;
   pointer-events: none;
   animation: float 18s ease-in-out infinite alternate;
 }
+
 @keyframes float {
   to {
     transform: translate3d(-6%, 4%, 0) rotate(2deg);
@@ -134,6 +120,7 @@ header h1 {
   font-weight: 600;
   letter-spacing: 0.2px;
 }
+
 header p {
   margin: 0.25rem 0 0;
   opacity: 0.95;
@@ -153,6 +140,7 @@ h2 {
   position: relative;
   letter-spacing: 0.2px;
 }
+
 h2::after {
   content: "";
   position: absolute;
@@ -185,14 +173,17 @@ li {
   transform: translateY(var(--lift));
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
 .project:hover {
   --lift: -2px;
   box-shadow: 0 14px 40px rgba(17, 34, 51, 0.12);
 }
+
 .project-header h3 {
   margin: 0;
   font-size: var(--fs-h3);
 }
+
 .project-header p {
   margin: 0.35rem 0 0;
 }
@@ -203,6 +194,7 @@ li {
   flex-wrap: wrap;
   margin-top: var(--space-3);
 }
+
 .btn {
   display: inline-block;
   padding: 0.6rem 1rem;
@@ -215,23 +207,28 @@ li {
     background-color 0.2s ease, color 0.2s ease;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
 }
+
 .btn-primary {
   background: var(--accent);
   color: #072233;
 }
+
 .btn-outline {
   border: 1px solid var(--accent);
   color: var(--accent);
   background: transparent;
 }
+
 .btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 6px 18px rgba(79, 195, 247, 0.25);
 }
+
 .btn:active {
   transform: translateY(0);
   box-shadow: none;
 }
+
 .btn:focus-visible {
   outline: 3px solid var(--ring);
   outline-offset: 2px;
@@ -259,6 +256,7 @@ aside.note {
   padding: 0;
   margin: var(--space-3) 0 var(--space-2);
 }
+
 .tech li {
   background: var(--box-color);
   color: var(--secondary-color);
@@ -268,9 +266,11 @@ aside.note {
   font-weight: 500;
   transition: transform 0.15s ease, background 0.2s ease;
 }
+
 .tech li:hover {
   transform: translateY(-1px);
 }
+
 @media (prefers-color-scheme: dark) {
   .tech li {
     background: #0e2239;
@@ -287,6 +287,7 @@ aside.note {
   max-width: 960px;
   position: relative;
 }
+
 .carousel {
   height: 600px !important;
   position: relative;
@@ -294,20 +295,24 @@ aside.note {
   border-radius: 12px;
   box-shadow: var(--shadow);
   background: var(--surface);
-  transition: height 0.3s ease; /* JS updates height per slide */
+  transition: height 0.3s ease;
+  /* JS updates height per slide */
 }
+
 .slides {
   display: flex;
   transition: transform 0.5s ease-in-out;
   will-change: transform;
   touch-action: pan-y;
 }
+
 figure.slide {
   min-width: 100%;
   margin: 0;
   text-align: center;
   background: var(--surface);
 }
+
 .media {
   width: 100%;
   display: flex;
@@ -317,12 +322,15 @@ figure.slide {
   overflow: hidden;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
+
 .media.is-landscape {
   aspect-ratio: var(--landscape-ar, 16/9);
 }
+
 .media.is-portrait {
   aspect-ratio: auto;
 }
+
 .media img {
   max-width: 100%;
   height: auto;
@@ -331,6 +339,7 @@ figure.slide {
   object-fit: contain;
   display: block;
 }
+
 figure.slide figcaption {
   padding: 0.65rem;
   color: var(--muted);
@@ -345,6 +354,7 @@ figure.slide figcaption {
   justify-content: space-between;
   pointer-events: none;
 }
+
 .nav button {
   pointer-events: auto;
   background: rgba(255, 255, 255, 0.86);
@@ -356,10 +366,12 @@ figure.slide figcaption {
   cursor: pointer;
   transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
+
 .nav button:hover {
   transform: translateY(-1px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
+
 .nav button:focus-visible {
   outline: 3px solid var(--ring);
   outline-offset: 2px;
@@ -384,6 +396,7 @@ figure.slide figcaption {
   transform: translateY(14px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
 .reveal.in {
   opacity: 1;
   transform: translateY(0);
@@ -394,10 +407,12 @@ figure.slide figcaption {
   .slides {
     transition: none;
   }
+
   .reveal {
     opacity: 1;
     transform: none;
   }
+
   header[role="banner"]::after {
     animation: none;
   }
@@ -411,6 +426,7 @@ footer {
   margin-top: 3rem;
   position: relative;
 }
+
 footer::before {
   content: "";
   position: absolute;
@@ -420,19 +436,175 @@ footer::before {
   height: 5px;
   background: linear-gradient(90deg, var(--accent-color), #fff);
 }
+
 footer p {
   color: white !important;
 }
+
 footer .social-links a {
   color: white;
   margin: 0 10px;
   font-size: 1.2rem;
 }
 
+/* =========================
+       Lightbox
+    ========================== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(15px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  overflow: hidden;
+  touch-action: none;
+}
+
+.lightbox[aria-hidden="false"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+}
+
+.lightbox-container:active {
+  cursor: grabbing;
+}
+
+.lightbox-content {
+  max-width: 95%;
+  max-height: 95%;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  transform-origin: center;
+  will-change: transform;
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.lightbox[aria-hidden="true"] .lightbox-content {
+  transform: scale(0.9) !important;
+}
+
+/* Controls */
+.lightbox-controls {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  gap: 0.75rem;
+  z-index: 2002;
+  align-items: center;
+}
+
+.lightbox-controls button {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.lightbox-controls button:hover {
+  background: rgba(60, 60, 60, 0.9);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.lightbox-controls button:active {
+  transform: translateY(0) scale(0.95);
+}
+
+.lightbox-close {
+  background: rgba(255, 59, 48, 0.8) !important;
+  border-color: rgba(255, 59, 48, 0.2) !important;
+  font-size: 1.8rem !important;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 59, 48, 1) !important;
+}
+
+#zoom-reset {
+  width: auto;
+  padding: 0 1.25rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Make carousel images look clickable */
+.media img {
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+.media img:hover {
+  transform: scale(1.02);
+}
+
+/* Prevent scrolling when lightbox is open */
+body.lightbox-open {
+  overflow: hidden;
+}
+
 /* Responsive rhythm */
 @media (max-width: 720px) {
   .project {
     padding: var(--space-4);
+  }
+
+  .lightbox-controls {
+    top: auto;
+    bottom: 2.5rem;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.5rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .lightbox-controls button {
+    width: 40px;
+    height: 40px;
+    border-radius: 14px;
+    background: rgba(30, 30, 30, 0.9);
+  }
+
+  /* Keep Close button at the top for easy exit */
+  .lightbox-close {
+    top: 1.5rem;
+    right: 1.5rem;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
   }
 }
 

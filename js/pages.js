@@ -176,3 +176,137 @@
         }
         restart();
       })();
+
+      /* ============================================================
+       3) Lightbox: Full-screen image preview with Zoom & Pan
+    ============================================================ */
+      (function () {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const lightboxClose = document.getElementById("lightbox-close");
+        const container = document.getElementById("lightbox-container");
+        const carousel = document.getElementById("vroomSlides");
+        
+        // Zoom buttons
+        const btnZoomIn = document.getElementById("zoom-in");
+        const btnZoomOut = document.getElementById("zoom-out");
+        const btnZoomReset = document.getElementById("zoom-reset");
+
+        if (!lightbox || !lightboxImg || !carousel) return;
+
+        let scale = 1;
+        let translateX = 0;
+        let translateY = 0;
+        let isDragging = false;
+        let startX, startY;
+
+        const updateTransform = (smooth = true) => {
+          lightboxImg.style.transition = smooth ? "transform 0.3s cubic-bezier(0.2, 0, 0.2, 1)" : "none";
+          lightboxImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+        };
+
+        const resetZoom = () => {
+          scale = 1;
+          translateX = 0;
+          translateY = 0;
+          updateTransform();
+        };
+
+        const openLightbox = (src, alt) => {
+          lightboxImg.src = src;
+          lightboxImg.alt = alt || "Project screenshot";
+          lightbox.setAttribute("aria-hidden", "false");
+          document.body.classList.add("lightbox-open");
+          resetZoom();
+        };
+
+        const closeLightbox = () => {
+          lightbox.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("lightbox-open");
+          setTimeout(() => {
+            if (lightbox.getAttribute("aria-hidden") === "true") {
+              lightboxImg.src = "";
+              resetZoom();
+            }
+          }, 400);
+        };
+
+        // Event: Click on carousel images
+        carousel.addEventListener("click", (e) => {
+          const img = e.target.closest("img");
+          if (img) {
+            openLightbox(img.src, img.alt);
+          }
+        });
+
+        // Event: Close
+        lightboxClose.addEventListener("click", closeLightbox);
+        lightbox.addEventListener("click", (e) => {
+          if (e.target === lightbox || e.target === container) {
+            closeLightbox();
+          }
+        });
+
+        // Zoom Logic
+        const zoom = (delta) => {
+          const newScale = Math.min(Math.max(scale + delta, 1), 5);
+          if (newScale === scale) return;
+          scale = newScale;
+          if (scale === 1) {
+            translateX = 0;
+            translateY = 0;
+          }
+          updateTransform();
+        };
+
+        btnZoomIn.addEventListener("click", () => zoom(0.5));
+        btnZoomOut.addEventListener("click", () => zoom(-0.5));
+        btnZoomReset.addEventListener("click", resetZoom);
+
+        // Mouse Wheel Zoom
+        lightbox.addEventListener("wheel", (e) => {
+          e.preventDefault();
+          const delta = e.deltaY < 0 ? 0.2 : -0.2;
+          zoom(delta);
+        }, { passive: false });
+
+        // Pan Logic (Drag)
+        const startDrag = (e) => {
+          if (scale <= 1) return;
+          isDragging = true;
+          startX = (e.pageX || e.touches[0].pageX) - translateX;
+          startY = (e.pageY || e.touches[0].pageY) - translateY;
+          lightboxImg.style.cursor = "grabbing";
+        };
+
+        const moveDrag = (e) => {
+          if (!isDragging) return;
+          e.preventDefault();
+          const x = (e.pageX || e.touches[0].pageX) - startX;
+          const y = (e.pageY || e.touches[0].pageY) - startY;
+          translateX = x;
+          translateY = y;
+          updateTransform(false); // No transition while dragging
+        };
+
+        const stopDrag = () => {
+          isDragging = false;
+          lightboxImg.style.cursor = scale > 1 ? "grab" : "default";
+        };
+
+        container.addEventListener("mousedown", startDrag);
+        window.addEventListener("mousemove", moveDrag);
+        window.addEventListener("mouseup", stopDrag);
+
+        // Touch support for panning
+        container.addEventListener("touchstart", startDrag, { passive: false });
+        window.addEventListener("touchmove", moveDrag, { passive: false });
+        window.addEventListener("touchend", stopDrag);
+
+        // Keyboard Escape
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && lightbox.getAttribute("aria-hidden") === "false") {
+            closeLightbox();
+          }
+        });
+      })();

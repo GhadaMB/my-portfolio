@@ -410,6 +410,19 @@
       </section>
     </main>
 
+    <!-- Lightbox for image preview & zoom -->
+    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
+      <div class="lightbox-controls">
+        <button id="zoom-in" aria-label="Zoom in">+</button>
+        <button id="zoom-out" aria-label="Zoom out">-</button>
+        <button id="zoom-reset" aria-label="Reset zoom">Reset</button>
+        <button id="lightbox-close" class="lightbox-close" aria-label="Close image preview">&times;</button>
+      </div>
+      <div id="lightbox-container" class="lightbox-container">
+        <img id="lightbox-img" class="lightbox-content" src="" alt="Full screen preview" />
+      </div>
+    </div>
+
     <footer>
       <p>
         &copy; 2025 Ghada Baroud | Information & Communication Technology
